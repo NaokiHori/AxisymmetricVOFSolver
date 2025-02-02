@@ -1,0 +1,13 @@
+TARGET := a.out
+
+find_arrow:
+	cc \
+		-std=c99 \
+		-I../../include \
+		-Wall -Wextra \
+		-DTEST_MARCHING_SQUARE \
+		./memory.c arrow.c arrow.test.c \
+		-o $(TARGET)
+
+clean:
+	rm -f $(TARGET)

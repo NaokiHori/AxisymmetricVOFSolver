@@ -38,10 +38,14 @@ output:
 	@if [ ! -e $(OUTDIR)/save ]; then \
 		mkdir -p $(OUTDIR)/save; \
 	fi
+	@if [ ! -e $(OUTDIR)/image ]; then \
+		mkdir -p $(OUTDIR)/image; \
+	fi
 
 datadel:
 	$(RM) -r $(OUTDIR)/log/*
 	$(RM) -r $(OUTDIR)/save/*
+	$(RM) -r $(OUTDIR)/image/*
 
 -include $(DEPS)
 

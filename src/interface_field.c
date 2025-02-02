@@ -29,8 +29,8 @@ int interface_field_init(
   prepare_array((size_t [NDIMS]){nx + 2, nz + 2}, &interface_field->force_z);
   *vof_beta = 1.;
   const double bath_height = 0.25 * lz;
-  const double cz = 0.65 * lz;
-  const double radius = 0.0625 * lz;
+  const double cz = 0.75 * lz;
+  const double radius = 0.5;
   // water: 0
   // air: 1
   // filled with water if

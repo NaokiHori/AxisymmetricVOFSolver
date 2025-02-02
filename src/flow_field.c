@@ -31,8 +31,8 @@ static int init_ux(
 ) {
   const size_t nx = domain->nx;
   const size_t nz = domain->nz;
-  for (size_t i = 1; i <= nx; i++) {
-    for (size_t k = 1; k <= nz; k++) {
+  for (size_t i = 0; i <= nx + 1; i++) {
+    for (size_t k = 0; k <= nz + 1; k++) {
       ux[i][k] = 0.;
     }
   }
@@ -62,8 +62,8 @@ static int init_uz(
 ) {
   const size_t nx = domain->nx;
   const size_t nz = domain->nz;
-  for (size_t i = 1; i <= nx; i++) {
-    for (size_t k = 1; k <= nz; k++) {
+  for (size_t i = 0; i <= nx + 1; i++) {
+    for (size_t k = 0; k <= nz + 1; k++) {
       uz[i][k] = 0.;
     }
   }

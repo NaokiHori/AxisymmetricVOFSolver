@@ -240,7 +240,7 @@ static int compute_face_vof(
       }
     }
   }
-  for (size_t k = 1; k <= nz; k++) {
+  for (size_t k = 0; k <= nz + 1; k++) {
     vof_ux[     0][k] = nan(""); // unused
     vof_ux[     1][k] = vof[     0][k];
     vof_ux[nx + 1][k] = vof[nx + 1][k];
@@ -276,7 +276,7 @@ static int compute_face_vof(
       }
     }
   }
-  for (size_t k = 1; k <= nz; k++) {
+  for (size_t k = 0; k <= nz + 1; k++) {
     vof_uz[     0][k] = vof[     0][k];
     vof_uz[nx + 1][k] = vof[nx + 1][k];
   }

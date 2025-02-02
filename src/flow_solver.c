@@ -104,6 +104,12 @@ int flow_solver_init(
   prepare_array((size_t [NDIMS]){nx + 2, nz + 2}, &flow_solver->psi[1]);
   prepare_array((size_t [NDIMS]){nx + 2, nz + 2}, &flow_solver->dux);
   prepare_array((size_t [NDIMS]){nx + 2, nz + 2}, &flow_solver->duz);
+  double ** const psi = flow_solver->psi[0];
+  for (size_t i = 0; i <= nx + 1; i++) {
+    for (size_t k = 0; k <= nz + 1; k++) {
+      psi[i][k] = 0.;
+    }
+  }
   // poisson solver
   poisson_solver_t * const poisson_solver = &flow_solver->poisson_solver;
   double ** const buf0 = &poisson_solver->buf0;
