@@ -15,7 +15,7 @@ A Navier-Stokes solver for interfacial two-phase flows under axisymmetric condit
 
 ## Quick Start
 
-Check out the readme of [the other library](https://github.com/NaokiHori/NS-Sandbox).
+Check out the readme of [the other library](https://github.com/NaokiHori/VerySimpleNSSolver).
 
 ## Methodology
 
