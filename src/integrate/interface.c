@@ -130,17 +130,22 @@ static int compute_metrics(
           - jdhz(hx_x0, hy_x0) * nz_zm
           + jdhz(hx_x0, hy_x0) * nz_zp
       );
-      center_nx[i][k] =
-        + 0.25 * corner_nx[i    ][k    ]
-        + 0.25 * corner_nx[i + 1][k    ]
-        + 0.25 * corner_nx[i    ][k + 1]
-        + 0.25 * corner_nx[i + 1][k + 1];
-      center_nz[i][k] =
-        + 0.25 * corner_nz[i    ][k    ]
-        + 0.25 * corner_nz[i + 1][k    ]
-        + 0.25 * corner_nz[i    ][k + 1]
-        + 0.25 * corner_nz[i + 1][k + 1];
-      const double norm = compute_norm(center_nx[i][k], center_nz[i][k]);
+      center_nx[i][k] = (
+          + 0.25 * corner_nx[i    ][k    ]
+          + 0.25 * corner_nx[i + 1][k    ]
+          + 0.25 * corner_nx[i    ][k + 1]
+          + 0.25 * corner_nx[i + 1][k + 1]
+      ) / hxxc[i];
+      center_nz[i][k] = (
+          + 0.25 * corner_nz[i    ][k    ]
+          + 0.25 * corner_nz[i + 1][k    ]
+          + 0.25 * corner_nz[i    ][k + 1]
+          + 0.25 * corner_nz[i + 1][k + 1]
+      ) / hzzc[k];
+      const double norm = compute_norm(
+          center_nx[i][k],
+          center_nz[i][k]
+      );
       center_nx[i][k] /= norm;
       center_nz[i][k] /= norm;
     }
