@@ -33,6 +33,7 @@ The following numerical techniques are adopted to solve the equations.
 - Approximating scheme of the variable-coefficient Poisson equation proposed by Dodd and Ferrante to facilitate the fast Poisson solver
 - Energy-consistent discretization for stable integration
 
+The governing equations are briefly documented [here](https://naokihori.github.io/AxisymmetricVOFSolver).
 For more details, check-out the following pages.
 
 - [Simple TC Solver](https://github.com/NaokiHori/SimpleTCSolver)
